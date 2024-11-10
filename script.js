@@ -5,6 +5,7 @@ let btnBlue = document.getElementById('btnBlue')
 let btnRed = document.getElementById('btnRed')
 
 func()
+setInterval(()=>{func()}, 2000)
 
 btnBlue.onclick = async () => {
     let votes = await get(child(ref(database), 'votes')).then(snapshot => { return snapshot.val() })
